@@ -21,7 +21,7 @@ jobs:
   
   Check_Validation:
     runs-on: ubuntu-latest
-    environment: TEST
+    environment: TESTNEW
     # The agent type used to build and deploy
     env:
       # Environment variables used in different stages, all are defined globally to be used
@@ -47,22 +47,22 @@ jobs:
     
 
      
-    - name: Find and Replace User Name - Using Build Variable
-      # This step will replace all the variables in variables.tf file while fetching the value from secrets
-      run: |
-        find variables.tf -type f -exec sed -i ''s/#{Env}#/${{ secrets.Env }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Vnet-IP}#/'${{ secrets.Vnet_IP }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-IP}#/'${{ secrets.Subnet_IP }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress1}#/'${{ secrets.Subnet_Dsaddress1 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress2}#/'${{ secrets.Subnet_Dsaddress2 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress3}#/'${{ secrets.Subnet_Dsaddress3 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Publisher-Email}#/'${{ secrets.Publisher_Email }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Serviceprincipal}#/${{ secrets.Serviceprincipal }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Publisher-Name}#/${{ secrets.Publisher_Name }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup1}#/${{ secrets.ADgroup1 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup2}#/${{ secrets.ADgroup2 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup3}#/${{ secrets.ADgroup3 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{subscription}#/${{ secrets.subscription  }}/g'' {} \;
+#     - name: Find and Replace User Name - Using Build Variable
+#       # This step will replace all the variables in variables.tf file while fetching the value from secrets
+#       run: |
+#         find variables.tf -type f -exec sed -i ''s/#{Env}#/${{ secrets.Env }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Vnet-IP}#/'${{ secrets.Vnet_IP }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-IP}#/'${{ secrets.Subnet_IP }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress1}#/'${{ secrets.Subnet_Dsaddress1 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress2}#/'${{ secrets.Subnet_Dsaddress2 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress3}#/'${{ secrets.Subnet_Dsaddress3 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Publisher-Email}#/'${{ secrets.Publisher_Email }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Serviceprincipal}#/${{ secrets.Serviceprincipal }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Publisher-Name}#/${{ secrets.Publisher_Name }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup1}#/${{ secrets.ADgroup1 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup2}#/${{ secrets.ADgroup2 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup3}#/${{ secrets.ADgroup3 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{subscription}#/${{ secrets.subscription  }}/g'' {} \;
         
 #     - name: Find and Replace User Name - Using Build Variable
 #       # This step will replace all the variables in parameters.yml file while fetching the value from secrets
@@ -140,22 +140,22 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Find and Replace User Name - Using Build Variable
-       # This step will replace all the variables in variables.tf file while fetching the value from secrets
-      run: |
-        find variables.tf -type f -exec sed -i ''s/#{Env}#/${{ secrets.Env }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Vnet-IP}#/'${{ secrets.Vnet_IP }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-IP}#/'${{ secrets.Subnet_IP }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress1}#/'${{ secrets.Subnet_Dsaddress1 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress2}#/'${{ secrets.Subnet_Dsaddress2 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress3}#/'${{ secrets.Subnet_Dsaddress3 }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Publisher-Email}#/'${{ secrets.Publisher_Email }}'/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Serviceprincipal}#/${{ secrets.Serviceprincipal }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{Publisher_Name}#/${{ secrets.Publisher_Name }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup1}#/${{ secrets.ADgroup1 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup2}#/${{ secrets.ADgroup2 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{ADgroup3}#/${{ secrets.ADgroup3 }}/g'' {} \;
-        find variables.tf -type f -exec sed -i ''s/#{subscription}#/${{ secrets.subscription  }}/g'' {} \;
+#     - name: Find and Replace User Name - Using Build Variable
+#        # This step will replace all the variables in variables.tf file while fetching the value from secrets
+#       run: |
+#         find variables.tf -type f -exec sed -i ''s/#{Env}#/${{ secrets.Env }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Vnet-IP}#/'${{ secrets.Vnet_IP }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-IP}#/'${{ secrets.Subnet_IP }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress1}#/'${{ secrets.Subnet_Dsaddress1 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress2}#/'${{ secrets.Subnet_Dsaddress2 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Subnet-Dsaddress3}#/'${{ secrets.Subnet_Dsaddress3 }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Publisher-Email}#/'${{ secrets.Publisher_Email }}'/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Serviceprincipal}#/${{ secrets.Serviceprincipal }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{Publisher_Name}#/${{ secrets.Publisher_Name }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup1}#/${{ secrets.ADgroup1 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup2}#/${{ secrets.ADgroup2 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{ADgroup3}#/${{ secrets.ADgroup3 }}/g'' {} \;
+#         find variables.tf -type f -exec sed -i ''s/#{subscription}#/${{ secrets.subscription  }}/g'' {} \;
        
   
       
